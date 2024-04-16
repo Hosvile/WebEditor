@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themes</title>
+</head>
+<body>
+    <p id="themes"></p>
+</body>
+    <script>
+      let theme = '<%= theme %>'.split(",")
+      let text = "";
+      console.log(theme.length)
+      for (let i = 0; i < theme.length; i++) {
+  text += `<h1 id="themes">${theme[i]}</h1>`;
+}
+      document.getElementById("themes").outerHTML = text;
+      function savescript() {
+      let savedscript = document.getElementById("script").value
+      localStorage.setItem("savedscript", `${savedscript}`);
+  }
+    </script>
+</html>
